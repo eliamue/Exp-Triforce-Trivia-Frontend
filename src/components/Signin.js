@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './Trivia.css'
+import './Sign.css'
 
-export default class Trivia extends Component {
+export default class Signin extends Component {
     render() {
         return (
             <div>
-                Triviaaaaa
+                Signin page!
             </div>
         )
     }
