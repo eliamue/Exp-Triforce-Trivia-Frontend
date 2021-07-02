@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './UserPage.css'
 
 export default class UserPage extends Component {
     render() {
