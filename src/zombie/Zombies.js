@@ -5,16 +5,6 @@ const zombies = [
     url: "../../public/zombies/z1.gif"
 },
 {
-    id: 1,
-    correct_answer: true,
-    url: "../../public/zombies/z1.gif"
-},
-{
-    id: 1,
-    correct_answer: true,
-    url: "../../public/zombies/z1.gif"
-},
-{
     id: 2,
     correct_answer: true,
     url: "../../public/zombies/z2.gif"

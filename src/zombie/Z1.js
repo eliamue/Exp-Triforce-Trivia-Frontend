@@ -1,33 +1,40 @@
 import React, { Component } from 'react';
-import './Zombie.css'
+import '../style/Zombie.css'
 
 export default class Z1 extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            bgImage: "url(../../zombies/z2.gif)",
+        state = {
+            number: 0,
+            bgImage: "url(../../zombies/z0.gif)",
             backgroundSize: "cover",
             height: "600px",
             backgroundRepeat: "no-repeat",
         }
-    }
-    
-    boxClick = (e) => {
-        this.setState({
-        bgImage: "url(../../zombies/z3.gif)",
-        })
-        this.props.history.push('/z2');
-        window.location.reload();
-    }
 
+componentDidMount = () => {
+    this.setState({
+        number: 0,
+        bgImage: "url(../../zombies/z0.gif)",
+    })
+}
+
+    rightAnswer = (e) => {
+            this.setState({
+                number: this.state.number + 1,
+                bgImage: `url(../../zombies/z${this.state.number}.gif)`,
+            })
+        }
+        
+    wrongAnswer = (e) => {
+        this.setState({
+            number: this.state.number - 1,
+            bgImage: `url(../../zombies/z${this.state.number}.gif)`,
+        })
+    }
     render() {
+        console.log(this.state.number)
         return (
         <div className="triv">
-                <button 
-                    className="true">True
-                </button>
                 <div 
-                    className="boxClickCss" 
                     style={{
                     backgroundImage: this.state.bgImage,
                     backgroundSize: "cover",
@@ -35,11 +42,22 @@ export default class Z1 extends Component {
                     backgroundRepeat: "no-repeat",
                     overflow: "visible"
                     }}
-                    onClick={this.boxClick}><button>False</button>
+                    >
+                    
+                    <button onClick={this.wrongAnswer}>False</button>
                 </div>
-
+                <div 
+                    style={{
+                    backgroundImage: this.state.bgImage,
+                    backgroundSize: "cover",
+                    height: "600px",
+                    backgroundRepeat: "no-repeat",
+                    overflow: "visible"
+                    }}
+                    >
+                    <button onClick={this.rightAnswer}>True</button>
                 </div>
+        </div>
         )
     }
 }
-
