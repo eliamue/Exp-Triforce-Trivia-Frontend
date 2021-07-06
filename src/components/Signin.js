@@ -5,7 +5,17 @@ export default class Signin extends Component {
     render() {
         return (
             <div>
-                Signin page!
+                <form>
+                    <label>
+                        Email
+                        <input type="email" />
+                    </label>
+                    <label>
+                        Password
+                        <input type="password" />
+                    </label>
+                    <button>Sign In</button>
+                </form>
             </div>
         )
     }
